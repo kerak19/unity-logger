@@ -19,10 +19,11 @@ public class FileLogger : ILineWriter {
 		logFile = new System.IO.StreamWriter(logFilePath, true);
 		logTime = withTime;
 	}
-
+ 
 	private readonly string timeFormat = ("yyyy-MM-dd HH:mm:ss");
 
-	// WriteLine writes log into file
+	// WriteLine writes log into file.
+	// Add JSON serialization
 	public void WriteLine(LogEntry le) {
 		// {{LogLevel}}: {{message}}
 		le.msg = le.level.String() + ": " + le.msg;
@@ -36,4 +37,4 @@ public class FileLogger : ILineWriter {
 		logFile.WriteLine(le.msg);
 		logFile.Flush();
 	}
-}
+} 

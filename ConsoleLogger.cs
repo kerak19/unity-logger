@@ -7,12 +7,10 @@ public class ConsoleLogger : Debug, ILineWriter {
 
 	// levelColors assignes colors to corresponding log levels
 	private readonly Dictionary<LogLevel, string> levelColors = new Dictionary<LogLevel, string>() {
-		{LogLevel.TRACE, "#e094ef"},
 		{LogLevel.DEBUG, "#4f8cef"},
 		{LogLevel.INFO, "#008000ff"},
 		{LogLevel.WARN, "#edb040"},
 		{LogLevel.ERROR, "#ea4141"},
-		{LogLevel.FATAL, "#ff0000"},
 	};
 
 	public void WriteLine(LogEntry le) {
